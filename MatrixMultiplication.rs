@@ -95,10 +95,11 @@ fn main() {
     mat_a.set_matrix();
     println!("Matrix {}: ", mat_a.name);
     for i in 0..mat_a.rows {
+        print!("\t");
         for j in 0..mat_a.cols {
             print!("{} ", mat_a.matrix[i as usize][j as usize]);
         }
-        println!("{}", "");
+        print!("\n");
     }
     let mut mat_b = Matrix {
         name: String::from("B"),
@@ -109,21 +110,23 @@ fn main() {
     mat_b.set_matrix();
     println!("Matrix {}: ", mat_b.name);
     for i in 0..mat_b.rows {
+        print!("\t");
         for j in 0..mat_b.cols {
             print!("{} ", mat_b.matrix[i as usize][j as usize]);
         }
-        println!("{}", "");
+        print!("\n");
     }
     if mat_a.cols == mat_b.rows {
         println!("The product Matrix is: ");
         let prod_mat: Vec<Vec<f32>> = matrix_multiplication(&mat_a, &mat_b);
         for i in 0..mat_a.rows {
+            print!("\t");
             for j in 0..mat_b.cols {
                 print!("{} ", prod_mat[i as usize][j as usize]);
             }
-            println!("{}", "");
+            print!("\n");
         }
     } else {
-        println!("{}", "Matrices can't be multiplied!");
+        println!("Matrices can't be multiplied!");
     }
 }
