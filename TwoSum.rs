@@ -5,12 +5,12 @@
  */
 use std::io;
 
-fn two_sum(list_of_numbs: Vec<i32>, target_num: i32) -> String {
+fn two_sum(list_of_numbs: &Vec<i32>, target_num: &i32) -> String {
     let mut result: bool = false;
     let message: String;
-    for p in &list_of_numbs {
-        for q in &list_of_numbs {
-            if p != q && p + q == target_num {
+    for p in list_of_numbs {
+        for q in list_of_numbs {
+            if p != q && p + q == *target_num {
                 result = true;
             }
         }
@@ -24,7 +24,7 @@ fn two_sum(list_of_numbs: Vec<i32>, target_num: i32) -> String {
 }
 
 fn main() {
-    println! {"Enter list of integers (space separated e.g. '1 2 3'): "};
+    println!("Enter list of integers (space separated e.g. '1 2 3'): ");
     let mut input_line: String = String::new();
     io::stdin()
         .read_line(&mut input_line)
@@ -42,6 +42,6 @@ fn main() {
         .read_line(&mut input_line)
         .expect("Failed to read line");
     let target_num: i32 = input_line.trim().parse().expect("Input not an integer");
-    let result: String = two_sum(list_of_numbs, target_num);
-    println!("{}", result);
+    let result: String = two_sum(&list_of_numbs, &target_num);
+    println!("{}", &result);
 }
