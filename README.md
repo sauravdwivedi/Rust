@@ -7,6 +7,10 @@ A collection of coding challenge solutions written in Rust. Coding challenge des
 - https://www.hackerrank.com/
 - https://code-exercises.com/
 
+For RESTful API examples of Rust, please refer to:
+
+- https://github.com/sauravdwivedi/Microservices/tree/main/Rust
+
 ## Execution
 
 ```mermaid
